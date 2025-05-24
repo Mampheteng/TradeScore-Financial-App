@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { Search } from 'lucide-react';
 import InstitutionItem from '../components/institutions/InstitutionItem';
+import logo from '../public/images/nedbank.jpg'
+import logo4 from '../public/images/standard.jpeg'
+import logo5 from '../public/images/postbank.png'
+import logo6 from '../public/images/fnb.jpeg'
 
 const InstitutionsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -9,26 +13,26 @@ const InstitutionsPage = () => {
     {
       id: 1,
       name: 'Nedbank',
-      logo: 'https://images.pexels.com/photos/nedbank-logo.png',
+      logo: logo,
       isLinked: true,
       lastSync: 'May 08 2023',
     },
     {
       id: 2,
       name: 'Standard Bank',
-      logo: 'https://images.pexels.com/photos/standard-bank-logo.png',
+      logo: logo4,
       isLinked: false,
     },
     {
       id: 3,
       name: 'Post Bank',
-      logo: 'https://images.pexels.com/photos/post-bank-logo.png',
+      logo: logo5,
       isLinked: false,
     },
     {
       id: 4,
       name: 'First National Bank',
-      logo: 'https://images.pexels.com/photos/fnb-logo.png',
+      logo: logo6,
       isLinked: false,
     },
   ];

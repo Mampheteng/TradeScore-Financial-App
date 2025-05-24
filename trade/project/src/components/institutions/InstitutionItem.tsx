@@ -16,9 +16,10 @@ const InstitutionItem = ({
       <div className="flex items-center">
         <div className="w-10 h-10 mr-4 flex items-center justify-center">
           <img 
-            src={`https://images.pexels.com/photos/bank-logos/${name.toLowerCase().replace(/\s+/g, '-')}-logo.jpg`}
+            src={logo}
             alt={`${name} logo`} 
-            className="w-8 h-8 object-contain"
+            className="w-15 h-9
+             object-contain"
           />
         </div>
         
