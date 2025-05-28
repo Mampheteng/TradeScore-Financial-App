@@ -29,7 +29,7 @@ const HomePage = () => {
     };
 
     fetchCreditScore();
-  }, []); // IMPORTANT: empty array prevents infinite loop
+  }, []); 
 
   const handleCreditScoreClick = () => {
     navigate('/credit-score');
