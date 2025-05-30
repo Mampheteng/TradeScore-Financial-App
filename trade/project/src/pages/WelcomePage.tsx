@@ -3,10 +3,10 @@ import Button from '../components/ui/Button';
 import Logo from '../components/ui/Logo';
 
 interface WelcomePageProps {
-  onLogin: () => void;
+  onLoginClick: () => void;
+  
 }
-
-const WelcomePage = ({ onLogin }: WelcomePageProps) => {
+const WelcomePage: React.FC<WelcomePageProps> = ({ onLoginClick, }) => {
   return (
     <div className="min-h-screen flex flex-col p-6 bg-white">
       <div className="flex-1 flex flex-col items-center justify-center mb-8">
@@ -40,7 +40,8 @@ const WelcomePage = ({ onLogin }: WelcomePageProps) => {
       </div>
       
       <div className="w-full">
-        <Button onClick={onLogin} fullWidth>
+      <Button onClick={onLoginClick} fullWidth>
+
           Get Started
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>

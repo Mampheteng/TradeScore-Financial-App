@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import WelcomePage from './pages/WelcomePage';
+import LoginPage from './pages/Login';
+import SignUpPage from './pages/SignUp';
 import HomePage from './pages/HomePage';
 import TransactionsPage from './pages/TransactionsPage';
 import CreditScorePage from './pages/CreditScorePage';
@@ -14,13 +16,36 @@ import Header from './components/layout/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState<'welcome' | 'login' | 'signup'>('welcome');
 
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
 
   if (!isLoggedIn) {
-    return <WelcomePage onLogin={handleLogin} />;
+    if (currentScreen === 'welcome') {
+      return (
+        <WelcomePage
+          onLoginClick={() => setCurrentScreen('login')}
+          
+        />
+      );
+    } else if (currentScreen === 'login') {
+      return (
+        <LoginPage
+          onLogin={handleLogin}
+          switchToSignUp={() => setCurrentScreen('signup')}
+          goBack={() => setCurrentScreen('welcome')}
+        />
+      );
+    } else if (currentScreen === 'signup') {
+      return (
+        <SignUpPage
+          switchToLogin={() => setCurrentScreen('login')}
+          goBack={() => setCurrentScreen('welcome')}
+        />
+      );
+    }
   }
 
   return (
@@ -89,3 +114,4 @@ function App() {
 }
 
 export default App;
+
