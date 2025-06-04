@@ -2,10 +2,12 @@ import { useState } from 'react';
 
 interface LoginPageProps {
   onLogin: () => void;
-  switchToSignUp: () => void;
+  switchToWelcomePage: () => void;
   goBack: () => void;
 }
-export default function LoginPage({ onLogin, switchToSignUp }: LoginPageProps) {
+
+// ✅ Corrected function parameter to match the corrected interface
+export default function LoginPage({ onLogin }: LoginPageProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,12 +33,15 @@ export default function LoginPage({ onLogin, switchToSignUp }: LoginPageProps) {
       >
         Log In
       </button>
-      <p className="mt-4 text-sm">
+
+      {/* ✅ Removed Sign Up link and button since it's not needed now */}
+      {/* <p className="mt-4 text-sm">
         Don’t have an account?{' '}
         <button className="text-teal-600 underline" onClick={switchToSignUp}>
           Sign Up
         </button>
-      </p>
+      </p> */}
     </div>
   );
 }
+
