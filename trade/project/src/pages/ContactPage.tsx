@@ -1,18 +1,21 @@
 import { Mail, Phone, MessageSquare } from 'lucide-react';
 import Button from '../components/ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 const ContactPage = () => {
+  const navigate = useNavigate();
+
+  const handleChat = () => {
+    console.log('Starting chat...');
+    navigate('/live-chat'); // Make sure this matches your route casing exactly
+  };
+
   const handleCall = () => {
-    window.location.href = 'tel:+2665778 9238';
+    window.location.href = 'tel:+26657789238';
   };
 
   const handleEmail = () => {
     window.location.href = 'mailto:support@tradescore.com';
-  };
-
-  const handleChat = () => {
-    // Implement chat functionality
-    console.log('Starting chat...');
   };
 
   return (
@@ -24,6 +27,7 @@ const ContactPage = () => {
         </div>
 
         <div className="space-y-4 mb-8">
+          {/* Call Support */}
           <div className="bg-white rounded-lg border border-gray-200 p-4">
             <div className="flex items-center mb-4">
               <div className="p-2 rounded-full bg-teal-100 mr-3">
@@ -39,6 +43,7 @@ const ContactPage = () => {
             </Button>
           </div>
 
+          {/* Email Us */}
           <div className="bg-white rounded-lg border border-gray-200 p-4">
             <div className="flex items-center mb-4">
               <div className="p-2 rounded-full bg-teal-100 mr-3">
@@ -54,6 +59,7 @@ const ContactPage = () => {
             </Button>
           </div>
 
+          {/* Live Chat */}
           <div className="bg-white rounded-lg border border-gray-200 p-4">
             <div className="flex items-center mb-4">
               <div className="p-2 rounded-full bg-teal-100 mr-3">
@@ -70,16 +76,26 @@ const ContactPage = () => {
           </div>
         </div>
 
+        {/* FAQs */}
         <div className="bg-gray-50 rounded-lg p-4">
           <h3 className="font-medium text-gray-800 mb-2">FAQs</h3>
           <div className="space-y-2">
-            <button className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors">
+            <button
+              className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors"
+              onClick={() => navigate('/faq-link-bank-account')}
+            >
               <p className="text-sm text-gray-700">How do I link my bank account?</p>
             </button>
-            <button className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors">
+            <button
+              className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors"
+              onClick={() => navigate('/faq-credit-score')}
+            >
               <p className="text-sm text-gray-700">What affects my credit score?</p>
             </button>
-            <button className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors">
+            <button
+              className="w-full text-left p-2 hover:bg-gray-100 rounded-md transition-colors"
+              onClick={() => navigate('/faq-score-updates')}
+            >
               <p className="text-sm text-gray-700">How often is my score updated?</p>
             </button>
           </div>

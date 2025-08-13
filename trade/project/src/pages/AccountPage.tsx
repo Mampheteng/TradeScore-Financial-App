@@ -16,18 +16,19 @@ const AccountPage = () => {
   };
 
   const handleAccountSettings = () => {
-    // Navigate to account settings (you can create a new route for this)
-    console.log('Navigating to account settings...');
+    navigate('/account-settings'); // navigate to account settings page
   };
 
   const handlePaymentMethods = () => {
-    // Navigate to payment methods
-    console.log('Navigating to payment methods...');
+    navigate('/payment-methods'); // navigate to payment methods page
   };
 
   const handlePrivacySecurity = () => {
-    // Navigate to privacy & security settings
-    console.log('Navigating to privacy & security settings...');
+    navigate('/privacy-security'); // navigate to privacy & security page
+  };
+
+  const handleSettings = () => {
+    navigate('/settings'); // navigate to general settings page
   };
 
   return (
@@ -64,6 +65,14 @@ const AccountPage = () => {
           >
             <Shield className="w-5 h-5 text-gray-500 mr-3" />
             <span className="text-gray-700">Privacy & Security</span>
+          </button>
+
+          <button 
+            onClick={handleSettings}
+            className="w-full flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <Settings className="w-5 h-5 text-gray-500 mr-3" />
+            <span className="text-gray-700">Settings</span>
           </button>
         </div>
 
